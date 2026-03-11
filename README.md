@@ -182,18 +182,15 @@ No installation or server required.
 
 ## Dashboard
 
-![Dashboard](<img width="1363" height="611" alt="Screenshot 2026-03-11 221027" src="https://github.com/user-attachments/assets/7046a19f-1aad-4bb4-916b-9825e1252c2f" />
-)
+![Dashboard](screenshots/dashboard.png)
 
 ## Add Task
 
-![Add Task](<img width="1365" height="604" alt="Screenshot 2026-03-11 221112" src="https://github.com/user-attachments/assets/2f30c691-0309-4b9e-9e90-9178b1c97a87" />
-)
+![Add Task](screenshots/add_task.png)
 
 ## Drag and Drop
 
-![Drag Drop](<img width="1365" height="607" alt="Screenshot 2026-03-11 221302" src="https://github.com/user-attachments/assets/2fd16d11-f8f3-4062-872a-ad5b6caa1f60" />
-)
+![Drag Drop](screenshots/drag_drop.png)
 
 ---
 
