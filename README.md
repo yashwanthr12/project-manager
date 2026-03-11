@@ -161,7 +161,7 @@ All tasks and projects are automatically saved in **LocalStorage**.
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/project-manager.git
+git clone https://github.com/yashwanthr12/project-manager.git
 ```
 
 Open the folder:
