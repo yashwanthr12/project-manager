@@ -182,15 +182,18 @@ No installation or server required.
 
 ## Dashboard
 
-![Dashboard](https://via.placeholder.com/1200x600.png?text=Kanban+Board)
+![Dashboard](<img width="1363" height="611" alt="Screenshot 2026-03-11 221027" src="https://github.com/user-attachments/assets/7046a19f-1aad-4bb4-916b-9825e1252c2f" />
+)
 
 ## Add Task
 
-![Add Task](https://via.placeholder.com/800x500.png?text=Add+Task+Modal)
+![Add Task](<img width="1365" height="604" alt="Screenshot 2026-03-11 221112" src="https://github.com/user-attachments/assets/2f30c691-0309-4b9e-9e90-9178b1c97a87" />
+)
 
 ## Drag and Drop
 
-![Drag Drop](https://via.placeholder.com/800x500.png?text=Drag+and+Drop+Tasks)
+![Drag Drop](<img width="1365" height="607" alt="Screenshot 2026-03-11 221302" src="https://github.com/user-attachments/assets/2fd16d11-f8f3-4062-872a-ad5b6caa1f60" />
+)
 
 ---
 
