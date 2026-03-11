@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+/* ================= HEADER ================= */
+.app-header {
+  height: 60px;
+  background: #1e293b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* SEARCH */
+.header-search {
+  display: flex;
+  gap: 10px;
+}
+
+.header-search input,
+.header-search select {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.header-search input {
+  width: 200px;
+}
+
+/* HEADER ACTIONS */
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-project {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-project:hover {
+  background-color: #2563eb;
+}
+
+.btn-task {
+  background-color: #22c55e;
+  color: white;
+}
+
+.btn-task:hover {
+  background-color: #16a34a;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* ================= LAYOUT ================= */
+.app-container {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 220px;
+  background: white;
+  border-right: 1px solid #ddd;
+  padding: 15px;
+}
+
+.project-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin-top: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.project-item:hover {
+  background: #f1f5f9;
+}
+
+.project-item.active {
+  background: #e0e7ff;
+  font-weight: bold;
+}
+
+.delete-project {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.delete-project:hover {
+  color: red;
+  opacity: 1;
+}
+
+/* ================= BOARD ================= */
+/* BOARD */
+.board {
+  flex: 1;
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  height: calc(100vh - 60px); /* header height */
+  overflow: hidden; /* IMPORTANT */
+}
+
+
+.column {
+  flex: 1;
+  background: white;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* IMPORTANT */
+  min-height: 0; /* FIX for overflow */
+}
+
+
+.task-list {
+  margin-top: 10px;
+  flex: 1;                 /* take remaining height */
+  overflow-y: auto;        /* enable scroll */
+  padding-right: 4px;      /* avoid scrollbar overlap */
+}
+
+
+/* ================= MODAL ================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  width: 320px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal h2 {
+  margin-bottom: 15px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel {
+  background: #e5e7eb;
+}
+
+.btn-cancel:hover {
+  background: #d1d5db;
+}
+
+.hidden {
+  display: none;
+}
+.modal textarea,
+.modal select {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+/* ================= TASK CARD ================= */
+.task {
+  background: #f9fafb;
+  border-radius: 6px;
+  padding: 10px 10px 30px; /* extra bottom space */
+  margin-bottom: 10px;
+  border-left: 4px solid #94a3b8;
+  cursor: grab;
+  position: relative; /* IMPORTANT */
+}
+
+.task h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.task p {
+  font-size: 13px;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.task small {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ================= DELETE BUTTON ================= */
+.task .delete-task {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task .delete-task:hover {
+  background: #dc2626;
+}
+.task[data-priority="high"] {
+  border-left-color: #ef4444;
+}
+
+.task[data-priority="medium"] {
+  border-left-color: #f59e0b;
+}
+
+.task[data-priority="low"] {
+  border-left-color: #22c55e;
+}
+/* ================= DRAG EFFECTS ================= */
+.task.dragging {
+  opacity: 0.5;
+}
+
+.column {
+  transition: background-color 0.2s ease;
+}
+
+.column.drag-over {
+  background-color: #f1f5f9;
+}
+/* ================= DUE DATE LOGIC ================= */
+.task.overdue {
+  background: #fee2e2; /* light red */
+}
+
+.task.due-today {
+  background: #fef9c3; /* light yellow */
+}
+
+.task .due-date {
+  display: block;
+  font-size: 11px;
+  color: #374151;
+  margin-top: 4px;
+}
+.empty-state {
+  padding: 12px;
+  color: #6b7280;
+  font-size: 14px;
+  text-align: center;
+}
+.task h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.task p {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.task small {
+  display: block;
+  margin-top: 4px;
+}
+.task {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.column h3 {
+  font-size: 15px;
+  font-weight: 600;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 8px;
+}
+.delete-project,
+.delete-task {
+  opacity: 0.6;
+}
+
+.delete-project:hover,
+.delete-task:hover {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .board {
+    flex-direction: column;
+  }
+}
+.task.dragging {
+  opacity: 0.4;
+  transform: rotate(2deg);
+}
+/* ================= CUSTOM SCROLLBAR ================= */
+.task-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;   /* soft gray */
+  border-radius: 10px;
+}
+
+.task-list::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
